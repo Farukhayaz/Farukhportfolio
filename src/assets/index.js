@@ -43,7 +43,7 @@ import amazon from "./amazon.png";
 import Restudent from "./Restudent.png";
 import play from "./play.png";
 import jobit from "./jobit.png";
-import home from "./Home.png";
+import home from "./home.png";
 
 import tripguide from "./tripguide.png";
 
