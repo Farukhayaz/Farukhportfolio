@@ -1,5 +1,5 @@
 import React from "react";
-import Tilt from "react-tilt";
+import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -47,7 +47,10 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-       I'm Farukh Ayaz, a fullstack developer with the 1 Year of Experience goal of advancing my career and participating in inspiring projects. Here I present my work and my passion for web development. Let's Shape digital solutions together and shape the future !
+        I'm Farukh Ayaz, a fullstack developer with the 1 Year of Experience
+        goal of advancing my career and participating in inspiring projects.
+        Here I present my work and my passion for web development. Let's Shape
+        digital solutions together and shape the future !
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
