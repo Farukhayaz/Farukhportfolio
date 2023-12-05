@@ -16,55 +16,55 @@ const Contact = () => {
   });
   const [loading, setLoading] = useState(false);
 
- const handleChange = (e) => {
-  const { name, value } = e.target;
-  console.log(name, value); // Add this line
-  setForm({ ...form, [name]: value });
-};
-
- const handleSubmit = (e) => {
-  e.preventDefault();
-  setLoading(true);
-
-  // Prepare the data to be sent to the API
-  const formData = {
-    name: form.name,
-    to_name: "Liron",
-    email: form.email,
-    to_email: "contact@mail.com",
-    message: form.message,
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    console.log(name, value); // Add this line
+    setForm({ ...form, [name]: value });
   };
-console.log(formData);
-  // Make a POST request to the API endpoint
- fetch("https://farukh-backend.onrender.com/send-email", {
-//  fetch("http://localhost:5000/send-email", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(formData),
-})
-  .then((response) => response.json())
-    .then((response) => response.json())
-    .then(
-      () => {
-        setLoading(false);
-        alert("Thank you. I will get back to you as soon as possible.");
 
-        setForm({
-          name: "",
-          email: "",
-          message: "",
-        });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    // Prepare the data to be sent to the API
+    const formData = {
+      name: form.name,
+      to_name: "Liron",
+      email: form.email,
+      to_email: "contact@mail.com",
+      message: form.message,
+    };
+    console.log(formData);
+    // Make a POST request to the API endpoint
+    fetch("https://farukh-backend.onrender.com/send-email", {
+      //  fetch("http://localhost:5000/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-      (error) => {
-        setLoading(false);
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((response) => response.json())
+      .then(
+        () => {
+          setLoading(false);
+          // alert("Thank you. I will get back to you as soon as possible.");
 
-        console.log(error);
-        alert("Something went wrong.");
-      }
-    );
-};
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
+
+          console.log(error);
+          alert("Something went wrong.");
+        }
+      );
+  };
 
   return (
     <div
