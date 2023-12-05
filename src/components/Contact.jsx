@@ -28,15 +28,16 @@ const Contact = () => {
 
   // Prepare the data to be sent to the API
   const formData = {
-    form_name: form.name,
+    name: form.name,
     to_name: "Liron",
-    from_email: form.email,
+    email: form.email,
     to_email: "contact@mail.com",
     message: form.message,
   };
 console.log(formData);
   // Make a POST request to the API endpoint
  fetch("https://farukh-backend.onrender.com/send-email", {
+//  fetch("http://localhost:5000/send-email", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
